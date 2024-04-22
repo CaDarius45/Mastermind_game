@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind</title>
+    <!-- <link href="https://i.imgur.com/AUBQloG.jpeg" rel="icon"> -->
+    <link href="style.css" rel="stylesheet">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <section id="startPage">
+        <h1>Mastermind</h1>
+        <h3>Ready to crack the code solider</h3>
+        <button id="playButton">Play</button>
+    </section>
+
+    <section id="howToPage">
+        <h1>Instructions</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum laborum iusto, exercitationem ut quo nisi, error cupiditate illum culpa ab optio ipsum id assumenda est, sequi eligendi rem eaque recusandae.</p>
+        <button id="backButton">Back to game</button>
+    </section>
+
+    <section id="gamePage">
+        <div id="board">
+            <div id="playerChoices">
+                <div class="color" id="blue"></div>
+                <div class="color" id="black"></div>
+                <div class="color" id="purple"></div>
+                <div class="color" id="green"></div>
+                <div class="color" id="yellow"></div>
+                <div class="color" id="red"></div>
+                <div class="color" id="white"></div>
+                <div class="color" id="orange"></div>
+            </div>
+
+            <div id="testRows">
+                <div class="rows" id="try1">
+                    <div class="combination">
+                        <div class="combo" id="0"></div>
+                        <div class="combo" id="1"></div>
+                        <div class="combo" id="2"></div>
+                        <div class="combo" id="3"></div>
+                    </div>
+                    <div class="checking">
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                    </div>
+                </div>
+                <div class="rows" id="try2">
+                    <div class="combination">
+                        <div class="combo" id="0"></div>
+                        <div class="combo" id="1"></div>
+                        <div class="combo" id="2"></div>
+                        <div class="combo" id="3"></div>
+                    </div>
+        
+                    <div class="checking">
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                    </div>
+                </div><div class="rows" id="try3">
+                    <div class="combination">
+                        <div class="combo" id="0"></div>
+                        <div class="combo" id="1"></div>
+                        <div class="combo" id="2"></div>
+                        <div class="combo" id="3"></div>
+                    </div>
+        
+                    <div class="checking">
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                    </div>
+                </div><div class="rows" id="try4">
+                    <div class="combination">
+                        <div class="combo" id="0"></div>
+                        <div class="combo" id="1"></div>
+                        <div class="combo" id="2"></div>
+                        <div class="combo" id="3"></div>
+                    </div>
+        
+                    <div class="checking">
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                    </div>
+                </div><div class="rows" id="try5">
+                    <div class="combination">
+                        <div class="combo" id="0"></div>
+                        <div class="combo" id="1"></div>
+                        <div class="combo" id="2"></div>
+                        <div class="combo" id="3"></div>
+                    </div>
+        
+                    <div class="checking">
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                    </div>
+                </div><div class="rows" id="try6">
+                    <div class="combination">
+                        <div class="combo" id="0"></div>
+                        <div class="combo" id="1"></div>
+                        <div class="combo" id="2"></div>
+                        <div class="combo" id="3"></div>
+                    </div>
+        
+                    <div class="checking">
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                    </div>
+                </div><div class="rows" id="try7">
+                    <div class="combination">
+                        <div class="combo" id="0"></div>
+                        <div class="combo" id="1"></div>
+                        <div class="combo" id="2"></div>
+                        <div class="combo" id="3"></div>
+                    </div>
+        
+                    <div class="checking">
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                    </div>
+                </div><div class="rows" id="try8">
+                    <div class="combination">
+                        <div class="combo" id="0"></div>
+                        <div class="combo" id="1"></div>
+                        <div class="combo" id="2"></div>
+                        <div class="combo" id="3"></div>
+                    </div>
+        
+                    <div class="checking">
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                    </div>
+                </div>
+
+            </div>
+            
+          
+
+            <button id="checkButton">check</button>
+        </div>
+
+        <button id="howToButton">Tutorial</button>
+        <button id="resetButton">Play Again</button>   
+    </section>
+</body>
+</html>

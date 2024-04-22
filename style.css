@@ -1,0 +1,152 @@
+body {
+    background-color: gainsboro;
+    font-family: "Bebas Neue", sans-serif;
+    margin: 0;
+}
+
+#startPage{
+    border: 5px solid black;
+}
+
+#howToPage{
+    border: 5px solid green;
+}
+
+#gamePage{
+    border: 5px solid blue;
+}
+
+.playerChoices{
+    display: flex; 
+}
+
+#gamePage {
+    max-width: 900px;
+    min-height: 600px;
+    background-color: lightseagreen;
+    margin: 0 auto;
+}
+  
+#gamePage > div {
+    border: 2px solid rgb(233 171 88);
+    border-radius: 5px;
+    background-color: rgb(233 171 88 / 50%);
+    color: #d9480f;
+}
+  
+#gamePage {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 1fr 6fr 1fr;
+    gap: 50px;
+}
+
+
+
+#board{
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-auto-rows: minmax(100px, auto);
+
+    > #playerChoices{
+        grid-column: 1;
+        grid-row: 3;
+        border: solid black;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    > #testRows{
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    > #checkButton{
+        grid-column: 2;
+        grid-row: 3;
+    }
+}
+
+.rows{
+display: flex;
+height: 30px;
+width: 50px;
+}
+
+
+.combination{
+    display: flex;
+    background-color: orange;
+}
+
+.checking{
+    background-color: violet;
+    border: solid white;
+    display: flex;
+}
+
+.combo{
+    border-radius: 50%;
+    border: 5px solid black ;
+    /* width: 10%;
+    height: 50%;  */
+}
+
+.check{
+    border-radius: 50%;
+    border: 5px solid black ;
+    /* width: 20%;
+    height: 40%;  */
+}
+
+.color{
+    border-radius: 50%;
+    border: 5px solid black ;
+    width: 10%;
+    height: 50%;   
+}
+
+#blue{
+    background-color: blue;
+}
+
+#black{
+    background-color: black;
+}
+
+#purple{
+    background-color: purple;
+}
+
+#green{
+    background-color: green;
+}
+
+#yellow{
+    background-color: yellow;
+}
+
+#red{
+    background-color: red;
+}
+
+#white{
+    background-color: white;
+}
+
+#orange{
+    background-color: orange;
+}
+
+#howToButton{
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#resetButton{
+    grid-column: 2;
+    grid-row: 3;
+}
