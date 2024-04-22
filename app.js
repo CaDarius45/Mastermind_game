@@ -1,7 +1,5 @@
-const difficult = 4
-const codes = []
-const tests = []
-let win,turn,select 
+
+let win,turn,select,difficult,codes,tests
 
 //screeen html elements
 const stratMenu = getOne('#startPage')
@@ -21,16 +19,14 @@ const checks = getAll('.check')
 //querySelector
 function getOne(get) {return document.querySelector(get)}
 function getAll(getAll) {return document.querySelectorAll(getAll)}
+function getID(element){return document.getElementById(element)}
 
- 
 //event listeners for the buttons
 play.addEventListener('click', () =>{stratMenu.style.display = 'none'; startGame()})
 howTo.addEventListener('click', () => howToScreen.style.display = 'block')
 back.addEventListener('click', () =>howToScreen.style.display = 'none')
-//reset.addEventListener('click',)
+reset.addEventListener('click',playAgain)
 checkButton.addEventListener('click', checkCode)
-
-//event listeners 
 
 combos.forEach(element => {
     element.addEventListener('click', setCombo)
@@ -43,12 +39,13 @@ colors.forEach(element => {
 
 /*-------------------------------- Functions --------------------------------*/
 function startGame(){
-    for (let i = 0; i < difficult; i++) {
-        codes.push(colors[Math.floor(Math.random()*colors.length)].id) 
-    }
+    difficult = 4
+    codes = []
+    tests = []
     select = ''
     win = false
-    turn = 9
+    turn = 8
+    createCode()
     console.log(codes)
 } 
 
@@ -58,55 +55,24 @@ function setCombo(event){
     tests.splice(id.id,0,select)
 }
 
+function createCode() {
+    for (let i = 0; i < difficult; i++) {
+        codes.push(colors[Math.floor(Math.random()*colors.length)].id) 
+    }
+}
+
 function checkCode() {
-    const orders = codes.slice()
-    let b = 0
 
-    orders.forEach((x,y) => {
-        if (x == tests[y]) { 
-            checks[b].style.backgroundColor = 'red'
-            orders.splice(y,1,true)
-            b++
-        }
-    })
-    if (orders.every(x => x == true)) {
-        return win = true
-    }else{
-        for (let i = 0; i < codes.length; i++) {
-            if(orders.find((e) => e == tests[i])){
-                checks[b].style.backgroundColor = 'orange'
-                b++
-            }
-        }
-    } 
-
-    checkVictory()
 }
 
 function checkVictory() {
-    if (win) {
-        
-    }else{
-        if (turn > 0) {
-            nextCode()
-        }
-        
-    }
+
 }
 
 function nextCode() {
-    const current = getOne(".combination");
-    const clone = current.cloneNode(true)
 
-    current.parentNode.insertBefore(clone, current);
+}
 
-    //current.ch
+function playAgain(){
 
-    current.style.gridRow = --turn
-
-    for (let i = 0; i < codes.length; i++) {
-        current.children[i].id = current.children[i].id + turn
-    }
-    
-    console.log(current.children[0].id)
 }
