@@ -4,22 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
     <title>Mastermind</title>
-    <!-- <link href="https://i.imgur.com/AUBQloG.jpeg" rel="icon"> -->
+    <link href="image/akatsuki_cloud.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Sedan:ital@0;1&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="app.js" defer></script>
 </head>
 
 <body>
     <section id="startPage">
-        <h1>Mastermind</h1>
+        <h1 id="title">Mastermind</h1>
         <h3>Ready to crack the code solider</h3>
         <button id="playButton">Play</button>
     </section>
 
-    <section id="howToPage">
-        <h1>Instructions</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum laborum iusto, exercitationem ut quo nisi, error cupiditate illum culpa ab optio ipsum id assumenda est, sequi eligendi rem eaque recusandae.</p>
+    <section id="howToPage"> 
+        <h1 id="instruction">Instructions</h1>
+        <audio id="won" src="Audio/success.mp3"></audio>
+        <audio id="lost" src="Audio/fail.mp3"></audio>
+        <audio id="theme" src="Audio/Naruto's Theme.mp3"></audio>
+        <ul>
+            <li><p>The master will pick a combination of a set amount of colors that the player will need to decode</p></li>
+            <li><p>The player needs to pick one of the color choices and place them in a combination they think the master has chosen and press the check button</p></li>
+            <li><p>The master will then proceed with some feedback to the right of your choice.</p>
+            <ul>
+                <li><p>If the master respondes with black, you have a correct color in the correct spot</p></li>
+                <li><p>If the master respondes with grey, you have a correct color but in the wrong spot</p></li>
+                <li><p>If the master dosent respondes, you have the wrong colors</p></li>
+            </ul>
+            <li><p>The player must keep guessing the masters combination of colors until they have guess them all correctly and won the game</p></li>
+            <li><p>The master wins if the player dosent guess the master combination within 8 turns</p></li>
+            </li>
+        </ul>
         <button id="backButton">Back to game</button>
     </section>
 
@@ -155,10 +172,8 @@
                 </div>
 
             </div>
-            
-            <button id="checkButton">check</button>
         </div>
-
+        <button id="checkButton">check</button>
         <button id="howToButton">Tutorial</button>
         <button id="resetButton">Play Again</button>   
     </section>

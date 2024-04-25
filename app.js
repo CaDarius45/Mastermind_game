@@ -17,14 +17,17 @@ const colors = getAll('.color')
 const combos = getAll('.combo')
 const checks = getAll('.check')
 const message = getOne('#resultMessage')
+const wonSound = getOne('#won')
+const lostSound = getOne('#lost')
+const startTheme = getOne('#theme')
 //querySelector
 function getOne(get) {return document.querySelector(get)}
 function getAll(getAll) {return document.querySelectorAll(getAll)}
 function getID(element){return document.getElementById(element)}
 //event listeners for the buttons
 play.addEventListener('click', () =>{stratMenu.style.display = 'none'; startGame()})
-howTo.addEventListener('click', () => howToScreen.style.display = 'block')
-back.addEventListener('click', () =>howToScreen.style.display = 'none')
+howTo.addEventListener('click', () => {howToScreen.style.display = 'block',gameScreen.style.display = 'none'})
+back.addEventListener('click', () =>{howToScreen.style.display = 'none',gameScreen.style.display = 'grid'})
 reset.addEventListener('click',playAgain)
 checkButton.addEventListener('click', checkCode)
 
@@ -39,6 +42,7 @@ colors.forEach(element => {
 
 /*-------------------------------- Functions --------------------------------*/
 function startGame(){
+    startTheme.play()
     gameScreen.style.display = 'grid';
     message.textContent = 'Welcome to mastermind'
     difficult = 4
@@ -71,6 +75,7 @@ function checkCode() {
     if(tests.includes(null)) {message.textContent = 'fill the whole code n';return}
     checkResults()
     checkVictory()
+    tests = [null,null,null,null]
 }
 
 function checkResults(){
@@ -80,8 +85,7 @@ function checkResults(){
 
     orders.forEach((x,y) => {
         if (x == tests[y]) { 
-            
-            checks[checkCount + base].style.backgroundColor = 'black'
+            checks[checkCount + base].style.backgroundColor = "black"
             orders.splice(y,1,true)
             base++
         }
@@ -105,10 +109,12 @@ function checkVictory() {
     if (win) {
         rowNum = 0
          message.textContent = 'You have won'
+         wonSound.play()
         return  
     }else if(turn <= 0){
         rowNum = 0
         message.textContent = 'You have lost'
+        lostSound.play()
        return
     }
 }

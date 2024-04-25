@@ -1,25 +1,117 @@
 body {
-    background-color: gainsboro;
+    background-color: black;
     font-family: "Bebas Neue", sans-serif;
-    margin: 0;
+    text-align: center;
+    margin: 1%;   
 }
-
+/*---------------------------------------------------------start page content----------------------------------------------------- */
 #startPage{
     border: 5px solid black;
+    color: red;
+    height: 900px;
+    display: block;
 }
 
+#playButton,#backButton{
+    background-image: url('image/akatsuki_cloud.png');
+    background-position: center;
+    background-size: 350px;
+}
+
+#playButton{
+    border-radius: 50%;
+    height: 22%;
+    width: 20%;
+    border: 5px solid black ;
+    font-size: 40px;
+    text-align: center;
+    position: absolute;
+    animation: flyingCloud 10s linear infinite alternate;
+}
+
+#playButton:hover{
+    color: white;
+}
+
+@keyframes flyingCloud {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        top: 65%;
+        left: 45%;
+    }
+
+    50% {
+        top: 50%;
+        left: 15%;
+    }
+
+    75% {
+        top: 20%;
+        left: 60%;
+    }
+
+    100% {
+        top: 60%;
+        left: 70%;
+    }
+}
+
+#title,#instruction{
+    font-family: "Jersey 10", sans-serif;
+    font-style: italic;
+    background-image: linear-gradient( red, darkred, red);
+    background-clip: text;
+    color: transparent;
+    font-size: 80px;
+}
+/*---------------------------------------------------------how to page content----------------------------------------------------- */
 #howToPage{
-    border: 5px solid green;
+    color: white;
+    font-family: 'sedan', sans-serif;
+    font-size: 25px;
     display: none;
+    text-align: left;
+    min-height: 900px;
+    min-width: 1500px;
 }
 
+#instruction{
+    text-align: center;
+    font-size: 100px;
+}
+
+#backButton{
+    background-size: 300px;
+    border-radius: 50%;
+    height: 200px;
+    width: 12%;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    left:  84%;
+}
+
+#backButton:hover{
+    color: white;
+}
+/*---------------------------------------------------------game page content----------------------------------------------------- */
 #gamePage{
     border: 5px solid blue;
+    min-width: 1000px;
     max-width: 900px;
     min-height: 600px;
     background-color: lightseagreen;
     margin: 0 auto;
-    display: none;
+    display: grid;
+    height: 900px;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 1fr 6fr 1fr;
+    gap: 50px;
+    
 
     > div {
         border: 2px solid rgb(233 171 88);
@@ -32,19 +124,12 @@ body {
 .playerChoices{
     display: flex; 
 }
-  
-#gamePage {
-    
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: 1fr 6fr 1fr;
-    gap: 50px;
-}
 
 #board{
     grid-column: 2;
     grid-row: 2;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(1, auto);
     grid-template-rows: repeat(3, auto);
     grid-auto-rows: minmax(100px, auto);
 
@@ -61,11 +146,19 @@ body {
         grid-column: 1;
         grid-row: 2;
     }
+}
 
-    > #checkButton{
-        grid-column: 2;
-        grid-row: 3;
-    }
+#checkButton{
+    grid-column: 3;
+    grid-row: 2;
+    border-radius: 50%;
+    height: 30%;
+    position: relative;
+    top: 50%;
+}
+
+#checkButton:hover{
+    background-color: red;
 }
 
 #resultMessage{
@@ -120,47 +213,72 @@ background-color: red;
     border-radius: 50%;
     border: 5px solid black ;
     width: 9%;
-    height: 70%;
+    height: 30%;
+}
+ 
+.color:hover{
+    border: 5px solid white;
+}
+.color:active{
+    border: 5px solid red;
 }
 
 #blue{
-    background-color: blue;
+    background-image: url('image/blue_ring.png');
+    background-size: 50px 50px;
+    background-position: center;
 }
 
 #violet{
-    background-color: violet;
+    background-image: url('image/pink_ring.png');
+    background-size: 50px 50px;
+    background-position: center;
 }
 
 #purple{
-    background-color: purple;
+    background-image: url('image/purple_ring.png');
+    background-size: 50px 50px;
+    background-position: center;
 }
 
 #green{
-    background-color: green;
+    background-image: url('image/green_ring.png');
+    background-size: 50px 50px;
+    background-position: center;
 }
 
 #yellow{
-    background-color: yellow;
+    background-image: url('image/yellow_ring.png');
+    background-size: 50px 50px;
+    background-position: center;
 }
 
 #red{
-    background-color: red;
+    background-image: url('image/red_ring.png');
+    background-size: 50px 50px;
+    background-position: center;
 }
 
 #teal{
-    background-color: teal;
+    background-image: url('image/teel_ring.png');
+    background-size: 50px 50px;
+    background-position: center;
 }
 
 #orange{
-    background-color: orange;
+    background-image: url('image/orange_ring.png');
+    background-size: 50px 50px;
+    background-position: center;
 }
 
 #howToButton{
     grid-column: 1;
     grid-row: 3;
+    border-radius: 50%;
 }
 
 #resetButton{
     grid-column: 2;
     grid-row: 3;
+    border-radius: 10%;
 }
