@@ -3,6 +3,7 @@
 ### this is a web-base mastermind board game 
 
 ## description
+- the game takes place in the naruto universe
 - The game starts off with a starting menu with no settings at the moment. Once you press play the mastermind and the board appears for the game to begin. you as the player must pick from colors and put them in the same combination as the master. The board has 8 colors with synbols and 9 attempts at trying to guess the right combation. 
 - [Wire frames](https://www.figma.com/file/PMZ8KCxsvOiLIVBxOXDhx4/Mastermind_wireFrames?type=design&node-id=0%3A1&mode=design&t=J3FPP9Pbr8ZfIi5L-1)
 - [Try game here](https://cadarius45.github.io/Mastermind_game/)
