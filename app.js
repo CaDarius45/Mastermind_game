@@ -1,33 +1,34 @@
-//variables
+/*------------------------------------variables-----------------------------------------*/
 let win,turn,select,difficult,codes,tests,orders,rowNum,checkCount
-//screeen html elements
+
+/*-------------------------------------screeen html elements--------------------------------*/
 const stratMenu = getOne('#startPage')
 const howToScreen = getOne('#howToPage')
 const gameScreen = getOne('#gamePage')
-//button html elements
+
+/*------------------------------------Button html elements-------------------------------------*/
 const play = getOne('#playButton')
 const howTo = getOne('#howToButton')
 const back = getOne('#backButton')
 const reset = getOne('#resetButton')
 const checkButton = getOne('#checkButton')
-//color html elements
-const rows = getOne('#testRows')
-const current = getOne(".combination");
+
+/*-------------------------------------------other html elements----------------------------------*/
 const colors = getAll('.color')
 const combos = getAll('.combo')
 const checks = getAll('.check')
 const master = getOne('#master')
 const masterCode = getAll('.masterCode')
-const message = getOne('#resultMessage')
 const wonSound = getOne('#won')
 const lostSound = getOne('#lost')
 const startTheme = getOne('#theme')
-//querySelector
+
+/*-----------------------------------------querySelector--------------------------------*/
 function getOne(get) {return document.querySelector(get)}
 function getAll(getAll) {return document.querySelectorAll(getAll)}
-function getID(element){return document.getElementById(element)}
-//event listeners for the buttons
-play.addEventListener('click', () =>{stratMenu.style.display = 'none'; startGame()})
+
+/*---------------------------------event listeners for the buttons------------------------------------------*/
+play.addEventListener('click', () =>{stratMenu.style.display = 'none'; startTheme.play();master.style.visibility = 'visible';startGame()})
 howTo.addEventListener('click', () => {howToScreen.style.display = 'block',gameScreen.style.display = 'none'})
 back.addEventListener('click', () =>{howToScreen.style.display = 'none',gameScreen.style.display = 'grid'})
 reset.addEventListener('click',playAgain)
@@ -44,19 +45,18 @@ colors.forEach(element => {
 
 /*-------------------------------- Functions --------------------------------*/
 function startGame(){
-    //startTheme.play()
     gameScreen.style.display = 'grid';
     difficult = 4
     codes = []
     tests = [null,null,null,null]
     select = ''
     win = false
-    turn = 8
+    turn = 9
     rowNum = 1
     checkCount= 0
     createCode()
 } 
-
+//sets the color of player choice into the spot they picked
 function setCombo(event){
     const hold = event.target.id
     if (event.target.parentNode.id == `try${rowNum}`) {
@@ -64,16 +64,16 @@ function setCombo(event){
         tests.splice(hold,1,select)
     }
 }
-
+//sets the master code
 function createCode() {
     for (let i = 0; i < difficult; i++) {
         codes.push(colors[Math.floor(Math.random()*colors.length)].id) 
         masterCode[i].style.backgroundColor = codes[i]
     }
 }
-
+//
 function checkCode() {
-    if(tests.includes(null) && win == false) {message.textContent = 'fill the whole code n';return}
+    if(tests.includes(null) && win == false) {return}
     checkResults()
     checkVictory()
     tests = [null,null,null,null]
@@ -96,8 +96,10 @@ function checkResults(){
         return win = true
     }else{
         for (let i = 0; i < codes.length; i++) {
-            if(orders.find((e) => e == tests[i])){
+            if(orders.find(e => e == tests[i])){
+                const index = orders.indexOf(tests[i])
                 checks[checkCount + base].style.backgroundColor = 'grey'
+                orders.splice(index,1,false)
                 base++
             }
         }
@@ -117,22 +119,42 @@ function checkVictory() {
 }
 
 function playAgain(){
+    wonSound.pause()
+    lostSound.pause()
     combos.forEach((x,y) => {
         x.style.backgroundColor = 'white'
         checks[y].style.backgroundColor = 'white'
     });
+    reset.style.visibility = 'hidden'
+    hideCode()
     startGame()
+}
+
+function hideCode(){
+    masterCode.forEach(x => {
+        x.style.visibility = x.style.visibility === 'visible' ? 'hidden' : 'visible'
+    });
 }
 
 function setWin()
 {
     rowNum = 0
-    message.textContent = 'You have won'
+    masterCode[0].textContent = 'W'
+    masterCode[1].textContent = 'I'
+    masterCode[2].textContent = 'N'
+    masterCode[3].textContent = '!'
     wonSound.play()
+    reset.style.visibility = 'visible'
+    hideCode()
 }
 
 function setLose(){
     rowNum = 0
-    message.textContent = 'You have lost'
+    masterCode[0].textContent = 'L'
+    masterCode[1].textContent = 'O'
+    masterCode[2].textContent = 'S'
+    masterCode[3].textContent = 'T'
     lostSound.play()
+    reset.style.visibility = 'visible'
+    hideCode()
 }

@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="#">
     <title>Mastermind</title>
     <link href="image/akatsuki_cloud.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Sedan:ital@0;1&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="app.js" defer></script>
@@ -15,7 +16,7 @@
 <body>
     <section id="startPage">
         <h1 id="title">Mastermind</h1>
-        <h3>Ready to crack the code solider</h3>
+        <h3>Ready to crack the code</h3>
         <button id="playButton">Play</button>
     </section>
 
@@ -34,14 +35,14 @@
                 <li><p>If the master dosent respondes, you have the wrong colors</p></li>
             </ul>
             <li><p>The player must keep guessing the masters combination of colors until they have guess them all correctly and won the game</p></li>
-            <li><p>The master wins if the player dosent guess the master combination within 8 turns</p></li>
+            <li><p>The master wins if the player dosent guess the masters combination within 9 turns</p></li>
             </li>
         </ul>
         <button id="backButton">Back to game</button>
     </section>
     
     <section id="gamePage">
-        <img id="master" src="image/sasori_master.png" height="500px" width="500px">
+        <img id="master" src="image/sasori_master.png" alt="sasori of the akatsuki" height="500px" width="500px">
         <div id="board">
             <div id="messageBoard">
                 <h4 id="resultMessage">Can you beat the Master</h4>
@@ -145,6 +146,19 @@
                     </div>
                 </div><div class="testRow" >
                     <div class="combination" id="try8">
+                        <div class="combo" id="0"></div>
+                        <div class="combo" id="1"></div>
+                        <div class="combo" id="2"></div>
+                        <div class="combo" id="3"></div>
+                    </div>
+                    <div class="checking">
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                        <div class="check"></div>
+                    </div>
+                </div> <div class="testRow">
+                    <div class="combination" id="try9">
                         <div class="combo" id="0"></div>
                         <div class="combo" id="1"></div>
                         <div class="combo" id="2"></div>
