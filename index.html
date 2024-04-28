@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <!-- <meta name=viewport content=width=device-width, initial-scale=1 /> -->
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="#">
@@ -16,8 +18,8 @@
 <body>
     <section id="startPage">
         <h1 id="title">Mastermind</h1>
-        <h3>Ready to crack the code</h3>
-        <button id="playButton">Play</button>
+        <h3 id="titleMessage">Ready to crack the code</h3>
+        <button id="playButton" style="background-image: url('image/akatsuki_cloud.png')">Play</button>
     </section>
 
     <section id="howToPage"> 
@@ -38,20 +40,20 @@
             <li><p>The master wins if the player dosent guess the masters combination within 9 turns</p></li>
             </li>
         </ul>
-        <button id="backButton">Back to game</button>
+        <button id="backButton" style="background-image: url('image/akatsuki_cloud.png')">Back to game</button>
     </section>
     
-    <section id="gamePage">
+    <section id="gamePage" style=" background-image: url('image/background_theme.jpg');">
         <img id="master" src="image/sasori_master.png" alt="sasori of the akatsuki" height="500px" width="500px">
-        <div id="board">
+        <div id="board" style="background-image: url('image/wood_texture.jpg');">
             <div id="messageBoard">
-                <h4 id="resultMessage">Can you beat the Master</h4>
+                <h4 id="resultMessage" style="background-image: url('image/red_wood_texture_.jpg');">Can you beat the Master</h4>
                 <div class="masterCode" id="m1">a</div>
                 <div class="masterCode" id="m2">s</div>
                 <div class="masterCode" id="m3">d</div>
                 <div class="masterCode" id="m4">f</div>
             </div> 
-            <div id="testRows">
+            <div id="testRows" style="background-image: url('image/red_wood_texture_.jpg');">
                 <div class="testRow">
                     <div class="combination" id="try1">
                         <div class="combo" id="0"></div>
@@ -173,19 +175,19 @@
                 </div>
             </div>
             <div id="playerChoices">
-                <div class="color" id="blue"></div>
-                <div class="color" id="pink"></div>
-                <div class="color" id="SlateBlue"></div>
-                <div class="color" id="greenyellow"></div>
-                <div class="color" id="yellow"></div>
-                <div class="color" id="red"></div>
-                <div class="color" id="teal"></div>
-                <div class="color" id="orange"></div>
+                <div class="color" id="blue" style="background-image: url('image/blue_ring.png');"></div>
+                <div class="color" id="pink" style="background-image: url('image/pink_ring.png');"></div>
+                <div class="color" id="SlateBlue" style="background-image: url('image/purple_ring.png');"></div>
+                <div class="color" id="greenyellow" style="background-image: url('image/green_ring.png');"></div>
+                <div class="color" id="yellow" style="background-image: url('image/yellow_ring.png');"></div>
+                <div class="color" id="red" style="background-image: url('image/red_ring.png');"></div>
+                <div class="color" id="teal" style="background-image: url('image/teel_ring.png');"></div>
+                <div class="color" id="orange" style="background-image: url('image/orange_ring.png');"></div>
             </div>
         </div>
-        <button id="checkButton">check</button>
-        <button id="howToButton">Tutorial</button>
-        <button id="resetButton">Play Again</button>   
+        <button id="checkButton" style="background-image: url('image/red_wood_texture_.jpg')">check</button>
+        <button id="howToButton" style="background-image: url('image/red_wood_texture_.jpg')">Tutorial</button>
+        <button id="resetButton" style="background-image: url('image/red_wood_texture_.jpg')">Play Again</button>   
     </section>
 </body>
 </html>

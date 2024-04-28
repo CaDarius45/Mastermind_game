@@ -18,17 +18,18 @@ button{
 }
 
 #playButton,#backButton{
-    background-image: url('image/akatsuki_cloud.png');
     background-position: center;
-    background-size: 350px;
+    background-size: 100% 100%;
 }
 
 #playButton{
     border-radius: 50%;
     height: 22%;
     width: 20%;
+    min-width: 200px;
+    min-height: 200px;
     border: 5px solid black ;
-    font-size: 40px;
+    font-size: 100%;
     text-align: center;
     position: absolute;
     animation: flyingCloud 10s linear infinite alternate;
@@ -108,7 +109,6 @@ button{
     min-width: 1200px;
     max-width: 900px;
     min-height: 600px;
-    background-image: url('image/background_theme.jpg');
     margin: 0 auto;
     display: none;
     height: 845px;
@@ -130,7 +130,6 @@ button{
     border-style: ridge;
     border-radius: 10px;
     background-size: cover;
-    background-image: url('image/wood_texture.jpg');
 }
 
 #master{
@@ -150,7 +149,6 @@ button{
 #resultMessage{
     font-family: "Sedan", sans-serif;
     color: white;
-    background-image: url('image/red_wood_texture_.jpg');
     border-radius: 5px;
     border: 2px ridge black;
     font-size: 30px;
@@ -176,7 +174,6 @@ button{
 #testRows{ 
     display: flex;
     flex-direction: column-reverse;
-    background-image: url('image/red_wood_texture_.jpg');
 }
 
 .testRow{
@@ -249,55 +246,46 @@ button{
 }
 
 #blue{
-    background-image: url('image/blue_ring.png');
     background-size: 50px 50px;
     background-position: center;
 }
 
 #pink{
-    background-image: url('image/pink_ring.png');
     background-size: 50px 50px;
     background-position: center;
 }
 
 #SlateBlue{
-    background-image: url('image/purple_ring.png');
     background-size: 50px 50px;
     background-position: center;
 }
 
 #greenyellow{
-    background-image: url('image/green_ring.png');
     background-size: 50px 50px;
     background-position: center;
 }
 
 #yellow{
-    background-image: url('image/yellow_ring.png');
     background-size: 50px 50px;
     background-position: center;
 }
 
 #red{
-    background-image: url('image/red_ring.png');
     background-size: 50px 50px;
     background-position: center;
 }
 
 #teal{
-    background-image: url('image/teel_ring.png');
     background-size: 50px 50px;
     background-position: center;
 }
 
 #orange{
-    background-image: url('image/orange_ring.png');
     background-size: 50px 50px;
     background-position: center;
 }
 
 #howToButton,#resetButton,#checkButton{
-    background-image: url('image/red_wood_texture_.jpg');
     background-size: cover;
     border-style:ridge;
     font-family: "Sedan", serif;
@@ -326,3 +314,14 @@ button{
     padding: 5px;
     visibility: hidden;
 }
+/*---------------------------------------------------------game page content----------------------------------------------------- */
+@media screen and (max-width: 481px){
+#startPage{
+    height: 500px;
+    >#playButton{
+        animation: none;
+        top: 35%;
+        left: 35%;
+    }
+}
+}   
