@@ -1,18 +1,19 @@
 /*------------------------------------variables-----------------------------------------*/
 let win,turn,select,difficult,codes,tests,orders,rowNum,checkCount
-
+/*-----------------------------------------querySelector--------------------------------*/
+// function getOne(get) {return document.querySelector(get)}
+function getOne(selecto) {return document.querySelector(selecto)}
+function getAll(getAll) {return document.querySelectorAll(getAll)}
 /*-------------------------------------screeen html elements--------------------------------*/
 const stratMenu = getOne('#startPage')
 const howToScreen = getOne('#howToPage')
 const gameScreen = getOne('#gamePage')
-
 /*------------------------------------Button html elements-------------------------------------*/
 const play = getOne('#playButton')
 const howTo = getOne('#howToButton')
 const back = getOne('#backButton')
 const reset = getOne('#resetButton')
 const checkButton = getOne('#checkButton')
-
 /*-------------------------------------------other html elements----------------------------------*/
 const colors = getAll('.color')
 const combos = getAll('.combo')
@@ -22,11 +23,6 @@ const masterCode = getAll('.masterCode')
 const wonSound = getOne('#won')
 const lostSound = getOne('#lost')
 const startTheme = getOne('#theme')
-
-/*-----------------------------------------querySelector--------------------------------*/
-function getOne(get) {return document.querySelector(get)}
-function getAll(getAll) {return document.querySelectorAll(getAll)}
-
 /*---------------------------------event listeners for the buttons------------------------------------------*/
 play.addEventListener('click', () =>{stratMenu.style.display = 'none'; startTheme.play();master.style.visibility = 'visible';startGame()})
 howTo.addEventListener('click', () => {howToScreen.style.display = 'block',gameScreen.style.display = 'none'})
@@ -41,7 +37,6 @@ combos.forEach(element => {
 colors.forEach(element => {
     element.addEventListener('click', (event) => {select = event.target.id})
 });
-
 
 /*-------------------------------- Functions --------------------------------*/
 function startGame(){
