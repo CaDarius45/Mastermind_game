@@ -17,8 +17,13 @@
 <body>
     <section id="startPage">
         <h1 id="title">Mastermind</h1>
-        <h3 id="titleMessage">Ready to crack the code</h3>
+        <h3 class="message">Ready to crack the code</h3>
         <button id="playButton" style="background-image: url('image/akatsuki_cloud.png')">Play</button>
+    </section>
+
+    <section id="mediaPage">
+        <h1 id="title">Not Ready</h1>
+        <h3 class="message">My apoligize</h3>
     </section>
 
     <section id="howToPage"> 
@@ -26,7 +31,7 @@
         <audio id="won" src="Audio/Naruto's Theme.mp3"></audio>
         <audio id="lost" src="Audio/Naruto lose.mp3"></audio>
         <audio id="theme" src="Audio/Blue Bird.theme.mp3"></audio>
-        <ul>
+        <ul class="message">
             <li><p>The master will pick a combination of a set amount of colors that the player will need to decode</p></li>
             <li><p>The player needs to pick one of the color choices and place them in a combination they think the master has chosen and press the check button</p></li>
             <li><p>The master will then proceed with some feedback to the right of your choice.</p>
@@ -43,6 +48,7 @@
     </section>
     
     <section id="gamePage" style=" background-image: url('image/background_theme.jpg');">
+        <div id="timer"><span id="min">0</span> :<span id="sec"> 0</span></div>
         <img id="master" src="image/sasori_master.png" alt="sasori of the akatsuki" height="500px" width="500px">
         <div id="board" style="background-image: url('image/wood_texture.jpg');">
             <div id="messageBoard">

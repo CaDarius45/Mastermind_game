@@ -1,5 +1,5 @@
 /*------------------------------------variables-----------------------------------------*/
-let win,turn,select,difficult,codes,tests,orders,rowNum,checkCount
+let win,turn,select,difficult,codes,tests,orders,rowNum,checkCount,seconds,minutes
 /*-----------------------------------------querySelector--------------------------------*/
 // function getOne(get) {return document.querySelector(get)}
 function getOne(selecto) {return document.querySelector(selecto)}
@@ -23,6 +23,7 @@ const masterCode = getAll('.masterCode')
 const wonSound = getOne('#won')
 const lostSound = getOne('#lost')
 const startTheme = getOne('#theme')
+const timer = getAll('#timer span')
 /*---------------------------------event listeners for the buttons------------------------------------------*/
 play.addEventListener('click', () =>{stratMenu.style.display = 'none'; startTheme.play();master.style.visibility = 'visible';startGame()})
 howTo.addEventListener('click', () => {howToScreen.style.display = 'block',gameScreen.style.display = 'none'})
@@ -38,10 +39,17 @@ colors.forEach(element => {
     element.addEventListener('click', (event) => {select = event.target.id})
 });
 
+function clickButton() {
+    document.querySelector('#timer').click();
+    console.log(1)
+}
+
 /*-------------------------------- Functions --------------------------------*/
 function startGame(){
     gameScreen.style.display = 'grid';
     difficult = 4
+    seconds = 0;
+    minutes = 1;
     codes = []
     tests = [null,null,null,null]
     select = ''
@@ -50,7 +58,19 @@ function startGame(){
     rowNum = 1
     checkCount= 0
     createCode()
+
+    //Simulate a timer every second
+    const time = setInterval(() => {
+    seconds++;
+    if (seconds == 60) {
+        seconds = 0;
+        timer[0].textContent = minutes;
+        minutes++;
+    }  
+    timer[1].textContent = seconds;
+}, 1000);
 } 
+
 //sets the color of player choice into the spot they picked
 function setCombo(event){
     const hold = event.target.id
@@ -106,9 +126,11 @@ function checkResults(){
 function checkVictory() {
     if (win) {
         setWin()
+        clearInterval(time);
         return  
     }else if(turn <= 0){
         setLose()
+        clearInterval(time);
        return
     }
 }
